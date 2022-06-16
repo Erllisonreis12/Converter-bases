@@ -33,8 +33,8 @@ int convertaInt(char num){
 
 int main(){
 
-    char num[50];
-    int baseInicial = 16;
+    char num[50], numConv[50];
+    int baseInicial = 16, baseFinal=11;
     double acum=0;
     
     scanf("%s", num);
@@ -45,6 +45,24 @@ int main(){
     }
 
     printf("%0.lf", acum);
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    double x=0;
+    double cont = acum;
+    int i=0;
+
+    while(1){
+        x+=((cont % baseFinal) * pow(10,i));
+        if(cont/baseFinal<baseFinal){
+            x += ((cont/baseFinal)*pow(10,i+1));
+            break;
+        }
+        cont/=baseFinal;
+        i++;
+    }
+
+    numConv = x;
+
+
    
 
     
